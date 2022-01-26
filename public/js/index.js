@@ -2,6 +2,35 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./resources/ts/App.tsx":
+/*!******************************!*\
+  !*** ./resources/ts/App.tsx ***!
+  \******************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.App = void 0;
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var App = function App() {
+  return react_1["default"].createElement("h1", null, "Laravel SPAaaa");
+};
+
+exports.App = App;
+
+/***/ }),
+
 /***/ "./resources/ts/index.tsx":
 /*!********************************!*\
   !*** ./resources/ts/index.tsx ***!
@@ -24,11 +53,9 @@ var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/r
 
 var react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
 
-var App = function App() {
-  return react_1["default"].createElement("h1", null, "Laravel SPA");
-};
+var App_1 = __webpack_require__(/*! ./App */ "./resources/ts/App.tsx");
 
-react_dom_1["default"].render(react_1["default"].createElement(App, null), document.getElementById('react-user-management'));
+react_dom_1["default"].render(react_1["default"].createElement(App_1.App, null), document.getElementById('react-user-management'));
 
 /***/ }),
 

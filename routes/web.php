@@ -22,3 +22,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/react_user_management', 'App\Http\Controllers\ReactUserManagemntController@reactUserManagement')->name('react.user.managemant');
+
+Route::fallback(function () {
+	return redirect('/react_user_management');
+});

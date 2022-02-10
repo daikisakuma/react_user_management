@@ -7,5 +7,4 @@
         id="react-user-management"
     ></div>
 </div>
-<script src="{{ asset("js/index.js") }}"></script>
 @endsection

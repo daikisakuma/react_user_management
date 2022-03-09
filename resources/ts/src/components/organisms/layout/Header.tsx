@@ -5,12 +5,16 @@ import  { useHistory } from "react-router-dom"
 
 import { MenuIconButton } from '../../atoms/button/MenuIconButton';
 import { MenuDrawer } from '../../molecules/MenuDrawer';
+import { useLoginUser } from '../../../hooks/useLoginUser';
+
 
 export const Header: VFC = memo(() => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const history = useHistory();
+    const { loginUser } = useLoginUser();
 
     const onClickHome = useCallback(() => history.push("/react_user_management/react_user_management/home"), []);
+    const onClickMyPage = useCallback(() => history.push("/react_user_management/react_user_management/home/my_page"), []);
     const onClickUserManagement = useCallback(() => history.push("/react_user_management/react_user_management/home/user_management"), []);
     const onClickSetting = useCallback(() => history.push("/react_user_management/react_user_management/home/setting"), []);
 
@@ -36,9 +40,16 @@ export const Header: VFC = memo(() => {
                 </Flex>
                 <Flex align="center" fontSize="sm" flexGrow={2} display={{ base: "none", md: "flex" }}>
                     <Box pr={4}>
+                        <Link onClick={onClickMyPage}>マイページ</Link>
+                    </Box>
+                    <Box pr={4}>
                         <Link onClick={onClickUserManagement}>ユーザー一覧</Link>
                     </Box>
-                    <Link onClick={onClickSetting}>設定</Link>
+                    {loginUser.isAdmin && (
+                        <Box pr={4}>
+                            <Link onClick={onClickSetting}>設定</Link>
+                        </Box>
+                    )}
                 </Flex>
                 <MenuIconButton onOpen={onOpen}/>
             </Flex>

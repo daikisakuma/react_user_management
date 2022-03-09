@@ -13,6 +13,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/index.js') }}" defer></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -29,7 +30,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="">
                     {{ config('app.name', 'Laravel') }}
@@ -81,7 +82,7 @@
 
         <main>
             <div class="main-inr">
-                @include('layouts.sidebar')
+                {{-- @include('layouts.sidebar') --}}
                 <div class="task">
                     @yield('content')
                 </div>

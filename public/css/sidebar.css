@@ -1,10 +1,12 @@
 .sidebar {
-    height: 90vh;
-    width: 200px;
-    border-right: 1px solid #bebdbd;
     overflow-y: auto;
     position: fixed;
     padding-left: 15px;
+    padding-top: 30px !important;
+    background-color: rgba(66, 66, 66, 1.0);
+    z-index: 2;
+    width: 200px;
+    height: 100vh;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -12,10 +14,10 @@
 }
 
 .sidebar h2 {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     color: #515fd8;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     margin-top: 50px;
 }
 
@@ -25,23 +27,38 @@
 }
 
 .sidebar li {
-    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    height: 60px;
     font-size: 13px;
 }
 
 .sidebar a {
-    text-decoration: none;
-    color: #a0a0a0;
+    display: block;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 60px;
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    text-decoration: none !important;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: #fff;
 }
 
 .sidebar a:hover {
-    color: black;
+    background-color: black;
 }
-
-.fas {
-    width: 15px;
+.selected-color {
+    background-color: black;
 }
 
 .sidebar li a span {
     margin-left: 5px;
+}
+
+i {
+    font-size: 17px;
+    margin-right: 15px;
 }
